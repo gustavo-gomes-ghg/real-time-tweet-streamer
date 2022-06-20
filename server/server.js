@@ -157,6 +157,7 @@ const reconnect = async (stream, socket, token) => {
 io.on("connection", async (socket) => {
   try {
     const token = BEARER_TOKEN;
+    console.log('tentando entrar em streamTweets');
     io.emit("connect", "Client connected");
     const stream = streamTweets(io, token);
   } catch (e) {
